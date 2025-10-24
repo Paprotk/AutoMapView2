@@ -1,0 +1,6 @@
+C:\Users\Arek\RiderProjects\AutoMapView2\AutoMapView2\bin\Debug\Arro.AutoMapView2.dll
+C:\Users\Arek\RiderProjects\AutoMapView2\AutoMapView2\bin\Debug\Arro.AutoMapView2.pdb
+C:\Users\Arek\RiderProjects\AutoMapView2\AutoMapView2\obj\Debug\AutoMapView2.csproj.AssemblyReference.cache
+C:\Users\Arek\RiderProjects\AutoMapView2\AutoMapView2\obj\Debug\AutoMapView2.csproj.CoreCompileInputs.cache
+C:\Users\Arek\RiderProjects\AutoMapView2\AutoMapView2\obj\Debug\Arro.AutoMapView2.dll
+C:\Users\Arek\RiderProjects\AutoMapView2\AutoMapView2\obj\Debug\Arro.AutoMapView2.pdb
