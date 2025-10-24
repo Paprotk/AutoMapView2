@@ -31,7 +31,6 @@ namespace Arro.AutoMapView2
 			_sceneMgrWindow.MouseWheel += OnMouseWheel;
 		}
 
-
 		private static void OnMouseWheel(WindowBase sender, UIMouseEventArgs eventArgs)
 		{
 			int wheelDelta = eventArgs.MouseWheelDelta;
