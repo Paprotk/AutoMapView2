@@ -1,9 +1,5 @@
-﻿using Sims3.Gameplay;
-using Sims3.Gameplay.Objects.HobbiesSkills;
-using Sims3.SimIFace;
+﻿using Sims3.SimIFace;
 using Sims3.UI;
-using Camera = Sims3.Gameplay.Core.Camera;
-using Function = Sims3.Gameplay.Function;
 using OneShotFunctionTask = Sims3.Gameplay.OneShotFunctionTask;
 
 namespace Arro.AutoMapView2
