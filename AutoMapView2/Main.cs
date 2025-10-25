@@ -1,5 +1,10 @@
-﻿using Sims3.SimIFace;
+﻿using Sims3.Gameplay;
+using Sims3.Gameplay.Objects.HobbiesSkills;
+using Sims3.SimIFace;
 using Sims3.UI;
+using Camera = Sims3.Gameplay.Core.Camera;
+using Function = Sims3.Gameplay.Function;
+using OneShotFunctionTask = Sims3.Gameplay.OneShotFunctionTask;
 
 namespace Arro.AutoMapView2
 {
@@ -9,6 +14,7 @@ namespace Arro.AutoMapView2
         public static bool kInstantiator = false;
 
 		private static SceneMgrWindow _sceneMgrWindow;
+		private static bool _mapViewDisabledRecently;
 		
 		static Main()
 		{
@@ -18,7 +24,7 @@ namespace Arro.AutoMapView2
 		
 		private static void OnCameraAtMaxZoom(bool atMaxZoom)
 		{
-			if (atMaxZoom)
+			if (atMaxZoom && !_mapViewDisabledRecently)
 			{
 				Responder.Instance.CameraModel.ToggleMapView();
 			}
@@ -26,9 +32,19 @@ namespace Arro.AutoMapView2
 		
 		private static void OnMapViewEnabled(bool enabled)
 		{
-			_sceneMgrWindow = UIManager.GetSceneWindow();
-			_sceneMgrWindow.MouseWheel -= OnMouseWheel;
-			_sceneMgrWindow.MouseWheel += OnMouseWheel;
+			if (enabled)
+			{
+				_sceneMgrWindow = UIManager.GetSceneWindow();
+				_sceneMgrWindow.MouseWheel -= OnMouseWheel;
+				_sceneMgrWindow.MouseWheel += OnMouseWheel;
+				return;
+			}
+			_mapViewDisabledRecently = true;
+			Simulator.AddObject(new OneShotFunctionTask(() => 
+			{
+				_mapViewDisabledRecently = false;
+			}, StopWatch.TickStyles.Seconds, 1.1f));
+			
 		}
 
 		private static void OnMouseWheel(WindowBase sender, UIMouseEventArgs eventArgs)
