@@ -50,6 +50,7 @@ namespace Arro.AutoMapView2
 			Vector3 worldPos = pickArgs.mWorldPos;
 			if (wheelDelta > 0)
 			{
+				eventArgs.Handled = true;
 				CameraController.RequestLerpToTarget(worldPos, 1f, false);
 				Responder.Instance.CameraModel.ToggleMapView();
 				_sceneMgrWindow.MouseWheel -= OnMouseWheel;
