@@ -2,7 +2,7 @@
 using Sims3.UI;
 using OneShotFunctionTask = Sims3.Gameplay.OneShotFunctionTask;
 
-namespace Arro.AutoMapView2
+namespace Arro.AutoMapView
 {
 	public class Main
 	{
